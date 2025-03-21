@@ -20,16 +20,4 @@ login_manager.login_view = 'login'
 login_manager.login_message = 'Faça login para continuar'
 login_manager.login_message_category = 'alert-info'
 
-from comunidadeimpressionadora import models
-engine = sqlalchemy.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
-inspector = sqlalchemy.inspect(engine)
-if not inspector.has_table("usuario"):
-    with app.app_contex():
-        database.drop_all()
-        database.create_all()
-        print("Base de dados Criada")
-else:
-    print("Base de dados inexistente")
-
-
 from comunidadeimpressionadora import routes
