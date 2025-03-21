@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block body %}
+        <div class="container mt-0">
+            <h2 style="color: orange" class="text-center">Comunidade Impressionadora - Hashtag Treinamentos</h2>
+            <strong><h1 style="color: orange" class="text-center">Boas Vindas! Alunos, Entusiastas e Experts em um só lugar!</h1></strong>
+            <hr>
+            {% for post in posts %}
+            <div class="row border mt-4 p-3 meupost">
+                <div class="col col-3">
+                    <div class="text-center">
+                    <div class="image pe-2"> <img src="{{ url_for('static', filename='fotos_perfil/{}' .format(post.autor.foto_perfil)) }}" class="img-fluid" width="190" height="150"></div>
+                    <strong><button type="button" class="btn btn-dark mt-1" disabled>{{ post.autor.username }}</button></strong>
+                     </div>
+
+                    <div class="row justify-content-center">
+                        {% if post.autor.cursos != 'Não Informado' %}
+                            {% for curso in post.autor.cursos.split(";") %}
+                                <button type="button" class="btn btn-success mt-2" disabled>{{ curso }}</button>
+                            {% endfor %}
+                        {% else %}
+                            <div class="row justify-content-center">Nenhum Curso Selecionado</div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="col col-9">
+                    <a style="text-decoration: none" href="{{ url_for('exibir_post', post_id=post.id) }}"><h3>{{ post.titulo }}</h3></a>
+                    <p>{{ post.corpo }}</p>
+                    {% if current_user.is_authenticated and current_user.is_admin %}
+                        <a href="{{ url_for('excluir_post', post_id=post.id) }}" class="text-danger">Excluir Post</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

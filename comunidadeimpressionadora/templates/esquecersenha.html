@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+  <div class="container">
+             <form method="POST" action = "{{ url_for('resetar') }}">
+                 {{ form.csrf_token }}
+                 <fieldset>
+                     <legend>Recuperar Senha</legend>
+                     <div class="form-group">
+                        {{ form.email.label(class="form-control-label") }}
+                        {% if form.email.errors %}
+                            {{ form.email(class="form-control is-invalid") }}
+                         <div class="invalid-feedback">
+                             {% for erro in form.email.errors %}
+                                <div class="align-center">
+                                    {{ erro }}
+                                </div>
+                            {% endfor %}
+                         </div>
+                        {% else %}
+                            {{ form.email(class="form-control") }}
+                        {% endif %}
+                     </div>
+                 </fieldset>
+                 <div class="align-center class=border p-1 mt-1">
+                     {{ form.botao_submit_resetar(class="btn btn-primary", type="submit") }}
+                     <a href="{{ url_for('login') }}" class="btn btn-primary">Voltar ao login</a>
+                 </p>
+                 </div>
+             </form>
+         </div>
+  </div>
+
+{% endblock %}
