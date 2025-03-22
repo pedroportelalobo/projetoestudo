@@ -27,7 +27,7 @@ Para conceder privilégios de administrador:
 - Marcação de "cursos"
 
 ## Objetivo
-"O objetivo principal deste projeto é demonstrar as habilidades adquiridas no curso Hashtag Treinamentos, aplicando técnicas de desenvolvimento e evidenciando minha vontade de aprender e me desenvolver continuamente. As seguintes técnicas foram incluídas:"
+O objetivo principal deste projeto é demonstrar as habilidades adquiridas no curso Hashtag Treinamentos, aplicando técnicas de desenvolvimento e evidenciando minha vontade de aprender e me desenvolver continuamente. As seguintes técnicas foram incluídas:
 
 - Ativação de permissões administrativas
 - Opção de comentários em posts
