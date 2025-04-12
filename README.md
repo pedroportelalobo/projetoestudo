@@ -1,6 +1,6 @@
 # Comunidade de Estudo
 
-**Um projeto feito para demonstração de estudo pessoal e integração de Python com Flask.**
+**Um projeto feito para demonstração de estudo pessoal com integração de Python com Flask.**
 
 ## Descrição
 
